@@ -7,16 +7,12 @@
     "node": "12.x"
   },
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "install": "cd client && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build",
-    "lint": "eslint . && cd client && npm run lint",
-    "lint:fix": "eslint --fix . && cd client && npm run lint:fix",
-    "test": "cd client && npm run test"
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node server.js",
+    "client": "cd client && npm start"
   },
   "author": "Travis Thompson, John Desrosiers",
   "license": "ISC",
