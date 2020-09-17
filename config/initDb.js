@@ -5,9 +5,9 @@ const mongoUri =
 
 const dbOptions = {
   useNewUrlParser: true,
-  useFindAndModify: false,
-  useCreateIndex: true,
   useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
 };
 
 module.exports = () => {
